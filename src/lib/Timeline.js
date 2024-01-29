@@ -121,7 +121,14 @@ export default class ReactCalendarTimeline extends Component {
 
     verticalLineClassNamesForTime: PropTypes.func,
 
-    children: PropTypes.node
+    children: PropTypes.node,
+
+    allowGroupDraggable: PropTypes.bool,
+    onDragEnd: PropTypes.func,
+    onDragStart: PropTypes.func,
+    onDragUpdate: PropTypes.func,
+    onBeforeCapture: PropTypes.func,
+    onBeforeDragStart: PropTypes.func,
   }
 
   static defaultProps = {
@@ -194,7 +201,14 @@ export default class ReactCalendarTimeline extends Component {
     onBoundsChange: null,
     children: null,
 
-    selected: null
+    selected: null,
+
+    allowGroupDraggable: false,
+    onDragEnd: () => {},
+    onDragStart: () => {},
+    onDragUpdate: () => {},
+    onBeforeCapture: () => {},
+    onBeforeDragStart: () => {},
   }
 
   static childContextTypes = {
@@ -829,6 +843,12 @@ export default class ReactCalendarTimeline extends Component {
           width={sidebarWidth}
           groupHeights={groupHeights}
           height={height}
+          allowGroupDraggable={this.props.allowGroupDraggable}
+          onDragEnd={this.props.onDragEnd}
+          onBeforeCapture={this.props.onBeforeCapture}
+          onBeforeDragStart={this.props.onBeforeDragStart}
+          onDragStart={this.props.onDragStart}
+          onDragUpdate={this.props.onDragUpdate}
         />
       )
     )

@@ -150,6 +150,7 @@ export default class App extends Component {
 
     return (
       <Timeline
+        allowGroupDraggable
         groups={groups}
         items={items}
         keys={keys}
