@@ -19,6 +19,7 @@ export default class Sidebar extends Component {
     onDragUpdate: PropTypes.func,
     onBeforeCapture: PropTypes.func,
     onBeforeDragStart: PropTypes.func,
+    isGroupCombineEnabled: PropTypes.bool,
   }
 
   shouldComponentUpdate(nextProps) {
@@ -120,7 +121,7 @@ export default class Sidebar extends Component {
             onDragStart={this.props.onDragStart || null}
             onDragUpdate={this.props.onDragUpdate || null}
           >
-            <Droppable droppableId="droppable">
+            <Droppable droppableId="droppable" isCombineEnabled={this.props.isGroupCombineEnabled}>
               {(provided, snapshot) => (
                 <div
                   style={groupsStyle}

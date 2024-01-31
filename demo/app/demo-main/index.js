@@ -151,6 +151,8 @@ export default class App extends Component {
     return (
       <Timeline
         allowGroupDraggable
+        isGroupCombineEnabled
+        onDragEnd={result => console.log(result)}
         groups={groups}
         items={items}
         keys={keys}

@@ -129,6 +129,7 @@ export default class ReactCalendarTimeline extends Component {
     onDragUpdate: PropTypes.func,
     onBeforeCapture: PropTypes.func,
     onBeforeDragStart: PropTypes.func,
+    isGroupCombineEnabled: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -849,6 +850,7 @@ export default class ReactCalendarTimeline extends Component {
           onBeforeDragStart={this.props.onBeforeDragStart}
           onDragStart={this.props.onDragStart}
           onDragUpdate={this.props.onDragUpdate}
+          isGroupCombineEnabled={this.props.isGroupCombineEnabled}
         />
       )
     )
